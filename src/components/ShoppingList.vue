@@ -1,40 +1,46 @@
 <template>
   <div>
-    <h2>{{ title }}</h2>
+    <h2 v-if="showTitle">{{ title }}</h2>
     
-    <!-- Input for adding items to the list (two-way data binding) -->
+    <!-- Input for adding items to the list with v-on directive -->
     <div>
-      <input v-model="newItem" placeholder="Add an item" />
+      <input v-model="newItem" placeholder="Add an item" @input="handleInput" />
       <button @click="addItem">Add</button>
     </div>
 
-    <!-- Display the shopping list (using props) -->
-    <ul>
+    <!-- Display the shopping list with v-for directive -->
+    <ul v-show="items.length > 0">
       <li v-for="(item, index) in items" :key="index">
         {{ item }}
         <button @click="removeItem(index)">Remove</button>
       </li>
     </ul>
+
+    <!-- Show a message when the list is empty with v-if directive -->
+    <p v-if="items.length === 0">No items in the list.</p>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    title: {
-      type: String,
-      default: "Shopping List",
-    },
-    initialItems: {
-      type: Array,
-      default: () => [],
+    title: String,
+    itemsList: Array,
+    showTitle: {
+      type: Boolean,
+      default: true,
     },
   },
   data() {
     return {
       newItem: '',
-      items: [...this.initialItems], // Use props to initialize items
+      items: this.itemsList || [],
     };
+  },
+  watch: {
+    items(newValue) {
+      this.$emit('update:itemsList', newValue);
+    },
   },
   methods: {
     addItem() {
@@ -45,6 +51,9 @@ export default {
     },
     removeItem(index) {
       this.items.splice(index, 1);
+    },
+    handleInput() {
+      console.log("Input changed!");
     },
   },
 };

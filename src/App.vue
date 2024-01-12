@@ -1,18 +1,27 @@
 <template>
   <div id="app">
-    <ShoppingList />
+    <ShoppingList :title="groceryTitle" v-model:itemsList="groceryList" />
+    <ShoppingList :title="homeImprovementTitle" v-model:itemsList="homeImprovementList" />
   </div>
 </template>
 
 <script>
-import ShoppingList from './components/ShoppingList.vue'
+import ShoppingList from "@/components/ShoppingList.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    ShoppingList
-  }
-}
+    ShoppingList,
+  },
+  data() {
+    return {
+      groceryTitle: "Grocery Shopping",
+      groceryList: [],
+      homeImprovementTitle: "Home Improvement",
+      homeImprovementList: [],
+    };
+  },
+};
 </script>
 
 <style>
