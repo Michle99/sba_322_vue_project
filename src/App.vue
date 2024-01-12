@@ -1,14 +1,14 @@
 <template>
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <ShoppingList msg="Welcome to Your Vue.js App"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ShoppingList from './components/ShoppingList.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ShoppingList
   }
 }
 </script>
@@ -19,7 +19,12 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #ecf0f5;
   margin-top: 60px;
+ 
+}
+
+body {
+  background-color: #2c3e50;
 }
 </style>
