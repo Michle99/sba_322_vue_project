@@ -1,5 +1,7 @@
 <template>
-  <ShoppingList msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <ShoppingList />
+  </div>
 </template>
 
 <script>
