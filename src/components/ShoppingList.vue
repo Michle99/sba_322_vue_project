@@ -1,14 +1,14 @@
 <template>
   <div>
-    <h2>Shopping List</h2>
+    <h2>{{ title }}</h2>
     
-    <!-- Input for adding items to the list -->
+    <!-- Input for adding items to the list (two-way data binding) -->
     <div>
       <input v-model="newItem" placeholder="Add an item" />
       <button @click="addItem">Add</button>
     </div>
 
-    <!-- Display the shopping list -->
+    <!-- Display the shopping list (using props) -->
     <ul>
       <li v-for="(item, index) in items" :key="index">
         {{ item }}
@@ -20,10 +20,20 @@
 
 <script>
 export default {
+  props: {
+    title: {
+      type: String,
+      default: "Shopping List",
+    },
+    initialItems: {
+      type: Array,
+      default: () => [],
+    },
+  },
   data() {
     return {
       newItem: '',
-      items: [],
+      items: [...this.initialItems], // Use props to initialize items
     };
   },
   methods: {
@@ -40,20 +50,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+/* Add your custom styles here if needed */
 </style>
