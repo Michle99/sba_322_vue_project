@@ -4,7 +4,7 @@
     
     <!-- Input for adding items to the list with v-on directive -->
     <div>
-      <input v-model="newItem" placeholder="Add an item" @input="handleInput" />
+      <input v-uppercase v-model="newItem" placeholder="Add an item" @input="handleInput" />
       <button @click="addItem">Add</button>
     </div>
 
