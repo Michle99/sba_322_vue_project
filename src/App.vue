@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <ShoppingList :title="groceryTitle" v-model:itemsList="groceryList" />
-    <ShoppingList :title="homeImprovementTitle" v-model:itemsList="homeImprovementList" />
+    <ShoppingList :title="groceryTitle" v-model:itemsList="groceryList" :showTitle="true" />
+    <ShoppingList :title="homeImprovementTitle" v-model:itemsList="homeImprovementList" :showTitle="false" />
   </div>
 </template>
 
