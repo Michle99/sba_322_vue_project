@@ -10,7 +10,7 @@
 
     <!-- Display the shopping list with v-for directive -->
     <ul v-show="items.length > 0">
-      <li v-for="(item, index) in items" :key="index" v-highlight="{ condition: item.length > 5, color: 'yellow' }">
+      <li v-for="(item, index) in items" :key="index" v-highlight="{ condition: item.length > 5, color: 'maroon' }">
         {{ item }}
         <button @click="removeItem(index)">Remove</button>
       </li>

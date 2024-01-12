@@ -1,5 +1,7 @@
 export default {
-    bind(el, binding) {
-      el.style.backgroundColor = binding.value;
+    mounted(el, binding) {
+      if (binding.value.condition) {
+        el.style.backgroundColor = binding.value.color;
+      }
     },
 };
