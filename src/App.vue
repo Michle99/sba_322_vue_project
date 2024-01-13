@@ -4,21 +4,12 @@
     <router-link class="nav-link" to="/shopping-list">Shopping List</router-link>
 
     <router-view></router-view>
-
-    <!-- Include ShoppingList components here -->
-    <!-- <ShoppingList :title="groceryTitle" v-model:itemsList="groceryList" :showTitle="true" />
-    <ShoppingList :title="homeImprovementTitle" v-model:itemsList="homeImprovementList" :showTitle="true" /> -->
   </div>
 </template>
 
 <script>
-// import ShoppingList from "@/components/ShoppingList.vue";
-
 export default {
   name: "App",
-  // components: {
-  //   ShoppingList,
-  // },
   data() {
     return {
       groceryTitle: "Grocery Shopping",
@@ -49,7 +40,7 @@ body {
   margin: 10px;
   padding: 10px;
   text-decoration: none;
-  color: #3498db; /* Blue color */
+  color: #3498db;
   font-weight: bold;
   border: 1px solid #3498db;
   border-radius: 5px;
@@ -57,7 +48,7 @@ body {
 }
 
 .nav-link:hover {
-  background-color: #3498db; /* Blue color on hover */
-  color: #fff; /* White text color on hover */
+  background-color: #3498db;
+  color: #fff;
 }
 </style>
