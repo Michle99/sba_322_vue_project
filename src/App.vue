@@ -10,14 +10,6 @@
 <script>
 export default {
   name: "App",
-  data() {
-    return {
-      groceryTitle: "Grocery Shopping",
-      groceryList: [],
-      homeImprovementTitle: "Home Improvement",
-      homeImprovementList: [],
-    };
-  },
 };
 </script>
 
