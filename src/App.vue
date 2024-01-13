@@ -1,18 +1,24 @@
 <template>
   <div id="app">
-    <ShoppingList :title="groceryTitle" v-model:itemsList="groceryList" :showTitle="true" />
-    <ShoppingList :title="homeImprovementTitle" v-model:itemsList="homeImprovementList" :showTitle="true" />
+    <router-link to="/">Home</router-link>
+    <router-link to="/shopping-list">Shopping List</router-link>
+
+    <router-view></router-view>
+
+    <!-- Include ShoppingList components here -->
+    <!-- <ShoppingList :title="groceryTitle" v-model:itemsList="groceryList" :showTitle="true" />
+    <ShoppingList :title="homeImprovementTitle" v-model:itemsList="homeImprovementList" :showTitle="true" /> -->
   </div>
 </template>
 
 <script>
-import ShoppingList from "@/components/ShoppingList.vue";
+// import ShoppingList from "@/components/ShoppingList.vue";
 
 export default {
   name: "App",
-  components: {
-    ShoppingList,
-  },
+  // components: {
+  //   ShoppingList,
+  // },
   data() {
     return {
       groceryTitle: "Grocery Shopping",
