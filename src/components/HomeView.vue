@@ -1,6 +1,6 @@
 <template>
   <div class="home-view">
-    <h1 class="title">Welcome to the Home Page!</h1>
+    <h1 class="title">Welcome to Vueshop App!</h1>
     <router-link to="/shopping-list">
       <button class="go-to-button">Go to Shopping List</button>
     </router-link>
