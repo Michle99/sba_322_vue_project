@@ -9,12 +9,10 @@
 
 <script>
 export default {
-  // Component logic goes here
 };
 </script>
 
 <style scoped>
-/* Component styles go here */
 
 .home-view {
   text-align: center;
@@ -23,13 +21,13 @@ export default {
 
 .title {
   font-size: 2rem;
-  color: #3498db; /* Blue color */
+  color: #3498db;
   margin-bottom: 20px;
 }
 
 .go-to-button {
-  background-color: #2ecc71; /* Green color */
-  color: #fff; /* White text color */
+  background-color: #2ecc71; 
+  color: #fff;
   padding: 10px 20px;
   font-size: 1rem;
   cursor: pointer;
@@ -39,6 +37,6 @@ export default {
 }
 
 .go-to-button:hover {
-  background-color: #27ae60; /* Darker green on hover */
+  background-color: #27ae60;
 }
 </style>
